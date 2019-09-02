@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14810.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14766.15"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactCell" id="KGk-i7-Jjw" customClass="ContactCell" customModule="EventsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CwE-l5-Lhg">
+                        <rect key="frame" x="8" y="18" width="21.5" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="1U3-qD-nSq"/>
+                            <constraint firstAttribute="width" constant="21.41" id="7vL-VC-xMj"/>
+                        </constraints>
+                    </imageView>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LRH-fm-34I">
+                        <rect key="frame" x="40" y="20" width="272" height="22"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="LRH-fm-34I" secondAttribute="trailing" constant="8" id="Bxf-ws-rDf"/>
+                    <constraint firstItem="LRH-fm-34I" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="EBt-WE-lPd"/>
+                    <constraint firstAttribute="bottom" secondItem="LRH-fm-34I" secondAttribute="bottom" constant="23" id="WMJ-3T-qUv"/>
+                    <constraint firstItem="CwE-l5-Lhg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="ikI-lK-Boa"/>
+                    <constraint firstItem="LRH-fm-34I" firstAttribute="leading" secondItem="CwE-l5-Lhg" secondAttribute="trailing" constant="10.710000000000001" id="jxk-qN-O7F"/>
+                    <constraint firstItem="CwE-l5-Lhg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="lVI-yi-fvv"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="informationIcon" destination="CwE-l5-Lhg" id="7uT-7u-Rfc"/>
+                <outlet property="informationInput" destination="LRH-fm-34I" id="dr7-dE-mUf"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="103"/>
+        </tableViewCell>
+    </objects>
+</document>

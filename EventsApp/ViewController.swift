@@ -11,17 +11,29 @@ import Alamofire
 import Kingfisher
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        eventTable.register(UINib(nibName: "EventCell", bundle: nil),
-                            forCellReuseIdentifier: "EventCell")
-    }
-
+    
     @IBOutlet weak var eventTable: UITableView! {
         didSet {
             eventTable.dataSource = self
             eventTable.delegate = self
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        eventTable.register(UINib(nibName: "EventCell", bundle: nil),
+                            forCellReuseIdentifier: "EventCell")
+        navigationItem.title = self.title!
+    }
+
+    @IBAction func AddEventClick(_ sender: Any) {
+        let addEventVC = AddEventViewController()
+        self.navigationController?.pushViewController(addEventVC, animated: true)
+    }
+    
+    @IBAction func filtersButtonClick(_ sender: Any) {
+        let filtersVC = FiltersVC()
+        self.navigationController?.pushViewController(filtersVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -35,6 +47,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let eventCell = tableView.dequeueReusableCell(withIdentifier: "EventCell",
                                                              for: indexPath) as? EventCell {
+            eventCell.selectionStyle = .none
             return eventCell
         } else {
             return UITableViewCell()

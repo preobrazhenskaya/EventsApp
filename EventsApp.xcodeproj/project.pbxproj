@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		870A40622319AAC60067514C /* DescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870A40602319AAC60067514C /* DescriptionCell.swift */; };
+		870A40632319AAC60067514C /* DescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 870A40612319AAC60067514C /* DescriptionCell.xib */; };
+		870A406A2319C5770067514C /* BookNowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870A40682319C5770067514C /* BookNowCell.swift */; };
+		870A406B2319C5770067514C /* BookNowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 870A40692319C5770067514C /* BookNowCell.xib */; };
+		870A406E2319CC890067514C /* TimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870A406C2319CC890067514C /* TimeCell.swift */; };
+		870A406F2319CC890067514C /* TimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 870A406D2319CC890067514C /* TimeCell.xib */; };
+		870A40722319CF290067514C /* FiltersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870A40702319CF290067514C /* FiltersVC.swift */; };
+		870A40732319CF290067514C /* FiltersVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 870A40712319CF290067514C /* FiltersVC.xib */; };
+		870A407A231BD0780067514C /* TimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870A4078231BD0780067514C /* TimeVC.swift */; };
+		870A407B231BD0780067514C /* TimeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 870A4079231BD0780067514C /* TimeVC.xib */; };
+		870A407E231BD54E0067514C /* TimeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870A407C231BD54E0067514C /* TimeCollectionCell.swift */; };
+		870A407F231BD54E0067514C /* TimeCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 870A407D231BD54E0067514C /* TimeCollectionCell.xib */; };
+		873CBF7A2317146500A75DCA /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873CBF782317146500A75DCA /* ContactCell.swift */; };
+		873CBF7B2317146500A75DCA /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 873CBF792317146500A75DCA /* ContactCell.xib */; };
+		8786D94523147796000E72DA /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8786D94323147796000E72DA /* AddEventViewController.swift */; };
+		8786D94623147796000E72DA /* AddEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8786D94423147796000E72DA /* AddEventViewController.xib */; };
+		8786D94F2315EB82000E72DA /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8786D94D2315EB82000E72DA /* DateCell.swift */; };
+		8786D9502315EB82000E72DA /* DateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8786D94E2315EB82000E72DA /* DateCell.xib */; };
+		8786D95623167B6E000E72DA /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8786D95423167B6E000E72DA /* PlaceCell.swift */; };
+		8786D95723167B6E000E72DA /* PlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8786D95523167B6E000E72DA /* PlaceCell.xib */; };
 		87FDABCA230C5D8F00CE2A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FDABC9230C5D8F00CE2A7D /* AppDelegate.swift */; };
 		87FDABCC230C5D8F00CE2A7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FDABCB230C5D8F00CE2A7D /* SceneDelegate.swift */; };
 		87FDABCE230C5D8F00CE2A7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FDABCD230C5D8F00CE2A7D /* ViewController.swift */; };
@@ -24,6 +44,26 @@
 		62CDA7A33A0A3C76596DB647 /* Pods-EventsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsApp.debug.xcconfig"; path = "Target Support Files/Pods-EventsApp/Pods-EventsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		68656D7E5BDDED8D4BB57EA6 /* Pods_EventsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83865E6480CCB442311739A4 /* Pods-EventsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsApp.release.xcconfig"; path = "Target Support Files/Pods-EventsApp/Pods-EventsApp.release.xcconfig"; sourceTree = "<group>"; };
+		870A40602319AAC60067514C /* DescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCell.swift; sourceTree = "<group>"; };
+		870A40612319AAC60067514C /* DescriptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionCell.xib; sourceTree = "<group>"; };
+		870A40682319C5770067514C /* BookNowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookNowCell.swift; sourceTree = "<group>"; };
+		870A40692319C5770067514C /* BookNowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookNowCell.xib; sourceTree = "<group>"; };
+		870A406C2319CC890067514C /* TimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCell.swift; sourceTree = "<group>"; };
+		870A406D2319CC890067514C /* TimeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeCell.xib; sourceTree = "<group>"; };
+		870A40702319CF290067514C /* FiltersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersVC.swift; sourceTree = "<group>"; };
+		870A40712319CF290067514C /* FiltersVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FiltersVC.xib; sourceTree = "<group>"; };
+		870A4078231BD0780067514C /* TimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeVC.swift; sourceTree = "<group>"; };
+		870A4079231BD0780067514C /* TimeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeVC.xib; sourceTree = "<group>"; };
+		870A407C231BD54E0067514C /* TimeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCollectionCell.swift; sourceTree = "<group>"; };
+		870A407D231BD54E0067514C /* TimeCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeCollectionCell.xib; sourceTree = "<group>"; };
+		873CBF782317146500A75DCA /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		873CBF792317146500A75DCA /* ContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCell.xib; sourceTree = "<group>"; };
+		8786D94323147796000E72DA /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
+		8786D94423147796000E72DA /* AddEventViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddEventViewController.xib; sourceTree = "<group>"; };
+		8786D94D2315EB82000E72DA /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
+		8786D94E2315EB82000E72DA /* DateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateCell.xib; sourceTree = "<group>"; };
+		8786D95423167B6E000E72DA /* PlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
+		8786D95523167B6E000E72DA /* PlaceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceCell.xib; sourceTree = "<group>"; };
 		87FDABC6230C5D8F00CE2A7D /* EventsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87FDABC9230C5D8F00CE2A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87FDABCB230C5D8F00CE2A7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,11 +117,31 @@
 				87FDABCF230C5D8F00CE2A7D /* Main.storyboard */,
 				87FDABD2230C5D9000CE2A7D /* Assets.xcassets */,
 				87FDABD4230C5D9000CE2A7D /* LaunchScreen.storyboard */,
-				87FDABD7230C5D9000CE2A7D /* Info.plist */,
-				87FDABE1230C63FD00CE2A7D /* EventCell.swift */,
-				87FDABE2230C63FD00CE2A7D /* EventCell.xib */,
 				87FDABE5230FFE6800CE2A7D /* EventViewController.swift */,
 				87FDABE6230FFE6800CE2A7D /* EventViewController.xib */,
+				8786D94323147796000E72DA /* AddEventViewController.swift */,
+				8786D94423147796000E72DA /* AddEventViewController.xib */,
+				87FDABE1230C63FD00CE2A7D /* EventCell.swift */,
+				87FDABE2230C63FD00CE2A7D /* EventCell.xib */,
+				8786D94D2315EB82000E72DA /* DateCell.swift */,
+				8786D94E2315EB82000E72DA /* DateCell.xib */,
+				87FDABD7230C5D9000CE2A7D /* Info.plist */,
+				8786D95423167B6E000E72DA /* PlaceCell.swift */,
+				8786D95523167B6E000E72DA /* PlaceCell.xib */,
+				873CBF782317146500A75DCA /* ContactCell.swift */,
+				873CBF792317146500A75DCA /* ContactCell.xib */,
+				870A40602319AAC60067514C /* DescriptionCell.swift */,
+				870A40612319AAC60067514C /* DescriptionCell.xib */,
+				870A40682319C5770067514C /* BookNowCell.swift */,
+				870A40692319C5770067514C /* BookNowCell.xib */,
+				870A406C2319CC890067514C /* TimeCell.swift */,
+				870A406D2319CC890067514C /* TimeCell.xib */,
+				870A40702319CF290067514C /* FiltersVC.swift */,
+				870A40712319CF290067514C /* FiltersVC.xib */,
+				870A4078231BD0780067514C /* TimeVC.swift */,
+				870A4079231BD0780067514C /* TimeVC.xib */,
+				870A407C231BD54E0067514C /* TimeCollectionCell.swift */,
+				870A407D231BD54E0067514C /* TimeCollectionCell.xib */,
 			);
 			path = EventsApp;
 			sourceTree = "<group>";
@@ -163,11 +223,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				870A406F2319CC890067514C /* TimeCell.xib in Resources */,
+				870A40732319CF290067514C /* FiltersVC.xib in Resources */,
+				8786D9502315EB82000E72DA /* DateCell.xib in Resources */,
 				87FDABE4230C63FD00CE2A7D /* EventCell.xib in Resources */,
 				87FDABD6230C5D9000CE2A7D /* LaunchScreen.storyboard in Resources */,
+				873CBF7B2317146500A75DCA /* ContactCell.xib in Resources */,
+				870A407F231BD54E0067514C /* TimeCollectionCell.xib in Resources */,
+				8786D95723167B6E000E72DA /* PlaceCell.xib in Resources */,
 				87FDABE8230FFE6800CE2A7D /* EventViewController.xib in Resources */,
+				870A40632319AAC60067514C /* DescriptionCell.xib in Resources */,
+				870A407B231BD0780067514C /* TimeVC.xib in Resources */,
+				870A406B2319C5770067514C /* BookNowCell.xib in Resources */,
 				87FDABD3230C5D9000CE2A7D /* Assets.xcassets in Resources */,
 				87FDABD1230C5D8F00CE2A7D /* Main.storyboard in Resources */,
+				8786D94623147796000E72DA /* AddEventViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,11 +290,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				870A406E2319CC890067514C /* TimeCell.swift in Sources */,
+				870A407A231BD0780067514C /* TimeVC.swift in Sources */,
+				873CBF7A2317146500A75DCA /* ContactCell.swift in Sources */,
 				87FDABE7230FFE6800CE2A7D /* EventViewController.swift in Sources */,
+				8786D94523147796000E72DA /* AddEventViewController.swift in Sources */,
+				8786D94F2315EB82000E72DA /* DateCell.swift in Sources */,
+				870A407E231BD54E0067514C /* TimeCollectionCell.swift in Sources */,
+				870A40622319AAC60067514C /* DescriptionCell.swift in Sources */,
 				87FDABE3230C63FD00CE2A7D /* EventCell.swift in Sources */,
+				870A40722319CF290067514C /* FiltersVC.swift in Sources */,
 				87FDABCE230C5D8F00CE2A7D /* ViewController.swift in Sources */,
 				87FDABCA230C5D8F00CE2A7D /* AppDelegate.swift in Sources */,
 				87FDABCC230C5D8F00CE2A7D /* SceneDelegate.swift in Sources */,
+				870A406A2319C5770067514C /* BookNowCell.swift in Sources */,
+				8786D95623167B6E000E72DA /* PlaceCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

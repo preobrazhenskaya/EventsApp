@@ -7,45 +7,42 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Мероприятия -->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EventsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Мероприятия " id="BYZ-38-t0r" customClass="ViewController" customModule="EventsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мероприятия" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47j-gw-D3J">
-                                <rect key="frame" x="40" y="180" width="149.5" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 зал" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4db-AB-p4e">
-                                <rect key="frame" x="40" y="215" width="35.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.16078431372549018" green="0.16078431372549018" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="highlightedColor" red="0.16078433394432068" green="0.1607842743396759" blue="0.1607842743396759" alpha="1" colorSpace="calibratedRGB"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rtm-cD-Wdf">
-                                <rect key="frame" x="24" y="350" width="366" height="495"/>
+                                <rect key="frame" x="24" y="105" width="366" height="740"/>
                                 <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.97254901960784312" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Rtm-cD-Wdf" secondAttribute="bottom" constant="17" id="7ph-QH-cv1"/>
-                            <constraint firstItem="47j-gw-D3J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="AFU-77-mSm"/>
-                            <constraint firstItem="Rtm-cD-Wdf" firstAttribute="top" secondItem="4db-AB-p4e" secondAttribute="bottom" constant="118" id="E1f-4u-ykG"/>
+                            <constraint firstItem="Rtm-cD-Wdf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="17" id="ArF-a2-TBn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rtm-cD-Wdf" secondAttribute="trailing" constant="24" id="MWO-3b-GHI"/>
-                            <constraint firstItem="4db-AB-p4e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="SZR-xS-NND"/>
-                            <constraint firstItem="4db-AB-p4e" firstAttribute="top" secondItem="47j-gw-D3J" secondAttribute="bottom" constant="6" id="aTD-mZ-Zcc"/>
                             <constraint firstItem="Rtm-cD-Wdf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="wxa-t6-Rpj"/>
-                            <constraint firstItem="47j-gw-D3J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="92" id="yKV-QG-atR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="SUC-jn-NAe"/>
+                    <navigationItem key="navigationItem" id="SUC-jn-NAe">
+                        <rightBarButtonItems>
+                            <barButtonItem image="plus" catalog="system" id="jFR-Di-eQK">
+                                <connections>
+                                    <action selector="AddEventClick:" destination="BYZ-38-t0r" id="Npu-E6-Apt"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="slider.horizontal.3" catalog="system" id="Q5j-Zg-VAr">
+                                <connections>
+                                    <action selector="filtersButtonClick:" destination="BYZ-38-t0r" id="GLf-Cn-y27"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="eventTable" destination="Rtm-cD-Wdf" id="Q1b-36-8MQ"/>
                     </connections>
@@ -73,4 +70,8 @@
             <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="64" height="58"/>
+        <image name="slider.horizontal.3" catalog="system" width="64" height="50"/>
+    </resources>
 </document>
