@@ -69,6 +69,12 @@
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.96862745098039216" green="0.97254901960784312" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="nameAndPhoneLabel" destination="O0I-J9-MP8" id="8iI-NM-GND"/>
+                <outlet property="nameLabel" destination="I7y-t3-26z" id="Hfc-oX-8Um"/>
+                <outlet property="statusPic" destination="IL0-Xi-jbt" id="Mjy-ds-5do"/>
+                <outlet property="timeLabel" destination="rhe-uk-n2e" id="OAy-Bd-z2B"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="140.625"/>
         </tableViewCell>
     </objects>

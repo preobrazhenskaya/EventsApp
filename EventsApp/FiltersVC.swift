@@ -21,7 +21,7 @@ class FiltersVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Фильтры"
+        self.title = "Фильтры"
         filtersTableView.register(UINib(nibName: "DateCell", bundle: nil),
                                forCellReuseIdentifier: "DateCell")
         filtersTableView.register(UINib(nibName: "PlaceCell", bundle: nil),
@@ -80,10 +80,13 @@ class FiltersVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 placeCell.selectionStyle = .none
                 if indexPath.row == 0 {
                     placeCell.placeLabel.text = "Зал 1"
+                    placeCell.placePic.image = UIImage(named: "place1")
                 } else if indexPath.row == 1 {
                     placeCell.placeLabel.text = "Зал 2"
+                    placeCell.placePic.image = UIImage(named: "place2")
                 } else if indexPath.row == 2 {
                     placeCell.placeLabel.text = "Зал 3"
+                    placeCell.placePic.image = UIImage(named: "place3")
                 }
                 return placeCell
             } else {

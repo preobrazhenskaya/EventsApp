@@ -10,8 +10,11 @@ import UIKit
 
 class TimeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    var minutes = 3
+    let blueTimeColor = UIColor(displayP3Red: 0.18, green: 0.56, blue: 0.96, alpha: 1)
+    var events : [Event]!
+    var minutes = 30
     var selectedCells : [Int] = []
+    var busyTime : [Int] = []
     
     @IBOutlet weak var timeCollection: UICollectionView! {
         didSet {
@@ -28,6 +31,9 @@ class TimeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         self.navigationItem.rightBarButtonItem  = readyButton
         timeCollection.register(UINib(nibName: "TimeCollectionCell", bundle: nil),
                                 forCellWithReuseIdentifier: "TimeCollectionCell")
+        if events.count > 0 {
+            doBusyTimesArray()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -39,8 +45,14 @@ class TimeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             timeCollection.dequeueReusableCell(withReuseIdentifier: "TimeCollectionCell",
                                                for: indexPath) as? TimeCollectionCell {
             let cellTime = minutes * indexPath.row
+            if busyTime.contains(cellTime) {
+                timeCollectionCell.active = false
+                timeCollectionCell.backgroundColor = .lightGray
+            } else {
+                timeCollectionCell.active = true
+            }
             timeCollectionCell.timeLabel.text =
-                "\(cellTime / 6 < 24 ? cellTime / 6 : 0):\(cellTime % 6)0"
+            "\(cellTime / 60 < 24 ? cellTime / 60 : 0):\(cellTime % 60 == 0 ? 0 : 3)0"
             return timeCollectionCell
         } else {
             return UICollectionViewCell()
@@ -48,23 +60,37 @@ class TimeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if selectedCells.count == 2 {
-            selectedCells.removeAll()
-            changeColorToWhite()
-        }
-        selectedCells.append(indexPath.row)
-        if selectedCells.count == 2 && selectedCells[0] >= selectedCells[1] {
-            selectedCells.removeAll()
-            changeColorToWhite()
-        } else {
-            changeColorToBlue()
+        if let selectCell = timeCollection.cellForItem(at: indexPath) as? TimeCollectionCell {
+            if selectCell.active! {
+                if selectedCells.count == 2 {
+                    selectedCells.removeAll()
+                    changeColorToWhite()
+                }
+                selectedCells.append(indexPath.row)
+                if selectedCells.count == 2 && selectedCells[0] >= selectedCells[1] {
+                    selectedCells.removeAll()
+                    changeColorToWhite()
+                } else {
+                    changeColorToBlue()
+                }
+            }
         }
     }
     
     func changeColorToBlue() {
         for i in (selectedCells[0])...selectedCells[selectedCells.count - 1] {
-            if let selectCell = timeCollection.cellForItem(at: IndexPath(row: i, section: 0)) as? TimeCollectionCell {
-                selectCell.backgroundColor = UIColor(displayP3Red: 0.18, green: 0.56, blue: 0.96, alpha: 1)
+            if let selectCell =
+                timeCollection.cellForItem(at: IndexPath(row: i, section: 0)) as? TimeCollectionCell {
+                if !selectCell.active! {
+                    changeColorToWhite()
+                    return
+                }
+            }
+        }
+        for i in (selectedCells[0])...selectedCells[selectedCells.count - 1] {
+            if let selectCell =
+                timeCollection.cellForItem(at: IndexPath(row: i, section: 0)) as? TimeCollectionCell {
+                selectCell.backgroundColor = blueTimeColor
                 selectCell.timeLabel.textColor = .white
             }
         }
@@ -73,9 +99,12 @@ class TimeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     func changeColorToWhite() {
         let cellsCount = timeCollection.numberOfItems(inSection: 0)
         for i in 0...(cellsCount - 1) {
-            if let selectCell = timeCollection.cellForItem(at: IndexPath(row: i, section: 0)) as? TimeCollectionCell {
-                selectCell.backgroundColor = .white
-                selectCell.timeLabel.textColor = .black
+            if let selectCell =
+                timeCollection.cellForItem(at: IndexPath(row: i, section: 0)) as? TimeCollectionCell {
+                if selectCell.backgroundColor == blueTimeColor {
+                    selectCell.backgroundColor = .white
+                    selectCell.timeLabel.textColor = .black
+                }
             }
         }
     }
@@ -103,6 +132,20 @@ class TimeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
                         timeCell.timeInput.text = "\(startTime.timeLabel.text!) - \(endTime.timeLabel.text!)"
                     }
                 }
+            }
+        }
+    }
+    
+    func doBusyTimesArray() {
+        for i in 0...(events.count - 1) {
+            let startTime = Date(timeIntervalSince1970: TimeInterval(events[i].startDate!))
+            let endTime = Date(timeIntervalSince1970: TimeInterval(events[i].endDate!))
+            let mStartTime = Calendar.current.component(.minute, from: startTime)
+                + Calendar.current.component(.hour, from: startTime) * 60
+            let mEndTime = Calendar.current.component(.minute, from: endTime)
+                + Calendar.current.component(.hour, from: endTime) * 60
+            for j in stride(from: mStartTime, through: mEndTime, by: 30) {
+                busyTime.append(j)
             }
         }
     }

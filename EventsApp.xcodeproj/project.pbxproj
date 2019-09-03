@@ -21,6 +21,7 @@
 		870A407F231BD54E0067514C /* TimeCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 870A407D231BD54E0067514C /* TimeCollectionCell.xib */; };
 		873CBF7A2317146500A75DCA /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873CBF782317146500A75DCA /* ContactCell.swift */; };
 		873CBF7B2317146500A75DCA /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 873CBF792317146500A75DCA /* ContactCell.xib */; };
+		874483ED231E964200BC443E /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874483EC231E964200BC443E /* Events.swift */; };
 		8786D94523147796000E72DA /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8786D94323147796000E72DA /* AddEventViewController.swift */; };
 		8786D94623147796000E72DA /* AddEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8786D94423147796000E72DA /* AddEventViewController.xib */; };
 		8786D94F2315EB82000E72DA /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8786D94D2315EB82000E72DA /* DateCell.swift */; };
@@ -58,6 +59,7 @@
 		870A407D231BD54E0067514C /* TimeCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeCollectionCell.xib; sourceTree = "<group>"; };
 		873CBF782317146500A75DCA /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		873CBF792317146500A75DCA /* ContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCell.xib; sourceTree = "<group>"; };
+		874483EC231E964200BC443E /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		8786D94323147796000E72DA /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
 		8786D94423147796000E72DA /* AddEventViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddEventViewController.xib; sourceTree = "<group>"; };
 		8786D94D2315EB82000E72DA /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
@@ -90,6 +92,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		874483EB231E962600BC443E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				874483EC231E964200BC443E /* Events.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		87FDABBD230C5D8F00CE2A7D = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +121,7 @@
 		87FDABC8230C5D8F00CE2A7D /* EventsApp */ = {
 			isa = PBXGroup;
 			children = (
+				874483EB231E962600BC443E /* Models */,
 				87FDABC9230C5D8F00CE2A7D /* AppDelegate.swift */,
 				87FDABCB230C5D8F00CE2A7D /* SceneDelegate.swift */,
 				87FDABCD230C5D8F00CE2A7D /* ViewController.swift */,
@@ -302,6 +313,7 @@
 				870A40722319CF290067514C /* FiltersVC.swift in Sources */,
 				87FDABCE230C5D8F00CE2A7D /* ViewController.swift in Sources */,
 				87FDABCA230C5D8F00CE2A7D /* AppDelegate.swift in Sources */,
+				874483ED231E964200BC443E /* Events.swift in Sources */,
 				87FDABCC230C5D8F00CE2A7D /* SceneDelegate.swift in Sources */,
 				870A406A2319C5770067514C /* BookNowCell.swift in Sources */,
 				8786D95623167B6E000E72DA /* PlaceCell.swift in Sources */,

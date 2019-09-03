@@ -9,7 +9,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventViewController" customModule="EventsApp" customModuleProvider="target">
             <connections>
+                <outlet property="dateLabel" destination="v40-eA-crW" id="gAb-W0-YMn"/>
                 <outlet property="descriptionLabel" destination="7T4-eD-0yf" id="Xdg-zg-Xu7"/>
+                <outlet property="endTimeLabel" destination="nPa-LR-Sgg" id="lpQ-Fv-iBb"/>
+                <outlet property="nameLabel" destination="ffT-WX-JAs" id="cbe-4j-pSW"/>
+                <outlet property="phoneNumberLabel" destination="Ks6-RK-irJ" id="yaf-x4-rk2"/>
+                <outlet property="placeLabel" destination="o2D-df-Q2u" id="NGh-9R-VSW"/>
+                <outlet property="startTimeLabel" destination="aaG-6F-Roe" id="3Zy-Up-TkC"/>
+                <outlet property="statusLabel" destination="Rbl-Tk-wL2" id="4DF-aO-iHX"/>
+                <outlet property="timeLabel" destination="wuz-0l-fvg" id="66p-NE-BnY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,10 +30,10 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MLL-Ei-IP7">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="637"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="625"/>
                             <subviews>
                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJH-1L-SxQ">
-                                    <rect key="frame" x="24" y="36" width="366" height="455"/>
+                                    <rect key="frame" x="24" y="24" width="366" height="455"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sv5-Lg-0aa" userLabel="Time View">
                                             <rect key="frame" x="0.0" y="0.0" width="366" height="80"/>
@@ -118,7 +126,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbl-Tk-wL2">
-                                                    <rect key="frame" x="204" y="186" width="42" height="17"/>
+                                                    <rect key="frame" x="204" y="186" width="41.5" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -179,7 +187,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAl-qM-cx1">
-                                    <rect key="frame" x="32" y="570" width="350" height="48"/>
+                                    <rect key="frame" x="32" y="558" width="350" height="48"/>
                                     <color key="backgroundColor" red="0.81999999999999995" green="0.01" blue="0.11" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="48" id="ikB-3U-GCu"/>
@@ -195,7 +203,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqr-Wp-HY0">
-                                    <rect key="frame" x="32" y="510" width="350" height="48"/>
+                                    <rect key="frame" x="32" y="498" width="350" height="48"/>
                                     <color key="backgroundColor" red="0.17999999999999999" green="0.56000000000000005" blue="0.95999999999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="48" id="fCs-0C-uUh"/>
@@ -221,7 +229,7 @@
                                 <constraint firstItem="iAl-qM-cx1" firstAttribute="leading" secondItem="MLL-Ei-IP7" secondAttribute="leading" constant="32" id="Wng-gT-fug"/>
                                 <constraint firstAttribute="bottom" secondItem="iAl-qM-cx1" secondAttribute="bottom" constant="19" id="dOF-Iq-xtF"/>
                                 <constraint firstItem="iAl-qM-cx1" firstAttribute="top" secondItem="jqr-Wp-HY0" secondAttribute="bottom" constant="12" id="k0M-Ru-K47"/>
-                                <constraint firstItem="OJH-1L-SxQ" firstAttribute="top" secondItem="MLL-Ei-IP7" secondAttribute="top" constant="36" id="qSM-8R-fnm"/>
+                                <constraint firstItem="OJH-1L-SxQ" firstAttribute="top" secondItem="MLL-Ei-IP7" secondAttribute="top" constant="24" id="qSM-8R-fnm"/>
                                 <constraint firstAttribute="trailing" secondItem="iAl-qM-cx1" secondAttribute="trailing" constant="32" id="swS-qB-VB7"/>
                             </constraints>
                         </view>

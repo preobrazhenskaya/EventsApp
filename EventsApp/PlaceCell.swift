@@ -11,6 +11,7 @@ import UIKit
 class PlaceCell: UITableViewCell {
 
     @IBOutlet weak var radioButton: UIButton!
+    @IBOutlet weak var placePic: UIImageView!
     @IBOutlet weak var placeLabel: UILabel!
     
     let checkedImage = UIImage(systemName: "circle.fill")

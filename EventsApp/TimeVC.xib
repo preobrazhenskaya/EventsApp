@@ -40,7 +40,7 @@
                     <color key="backgroundColor" red="0.96862745098039216" green="0.97254901960784312" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.96862745098039216" green="0.97254901960784312" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rRC-bK-C6Z" secondAttribute="trailing" id="FZS-0G-j2h"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="rRC-bK-C6Z" secondAttribute="bottom" id="SG8-Wy-dJq"/>
