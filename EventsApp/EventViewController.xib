@@ -201,6 +201,9 @@
                                             <integer key="value" value="6"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="clickCancelButton:" destination="-1" eventType="touchDown" id="GFW-7b-j5O"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqr-Wp-HY0">
                                     <rect key="frame" x="32" y="498" width="350" height="48"/>

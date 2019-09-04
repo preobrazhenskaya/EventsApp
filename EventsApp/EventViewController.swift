@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class EventViewController: UIViewController {
     
@@ -25,6 +26,10 @@ class EventViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = event?.name
+        setData()
+    }
+    
+    func setData() {
         let dFormat = DateFormatter()
         dFormat.dateFormat = "H:mm"
         let start = Date(timeIntervalSince1970: TimeInterval((event?.startDate)!))
@@ -77,5 +82,40 @@ class EventViewController: UIViewController {
         }
         statusLabel.text = status
         descriptionLabel.text = event?.comment
+    }
+    
+    @IBAction func clickCancelButton(_ sender: Any) {
+        cancelEvent(id: event?.id)
+        setData()
+    }
+    
+    func cancelEvent(id : Int?) {
+        if id != nil {
+            let url = "http://gt-schedule.profsoft.online/api/event/cancel/\(id!)"
+            Alamofire.request(url, method: .get)
+                .responseJSON { response in
+                    switch response.result {
+                    case .success:
+                        if let data = response.data {
+                            do {
+                                self.event = try JSONDecoder().decode(Event.self, from: data)
+                            }
+                            catch {
+                                print("Can't fetch parsedData")
+                            }
+                        } else {
+                            return
+                        }
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+            }
+        } else {
+            let errorAlert = UIAlertController(title: "Ошибка",
+                                               message: "Невозможно отменить мероприятие",
+                                               preferredStyle: .alert)
+            errorAlert.addAction(UIAlertAction(title: "Ок", style: .cancel, handler: nil))
+            self.present(errorAlert, animated: true, completion: nil)
+        }
     }
 }
