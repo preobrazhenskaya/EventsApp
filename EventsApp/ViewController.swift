@@ -13,6 +13,10 @@ import Kingfisher
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var parsedData : [Event]?
+    var filtersDate : Date?
+    var filtersPlace : Int?
+    var filtersDateData : [Event] = []
+    var filtersPlaceData : [Event] = []
     
     @IBOutlet weak var eventTable: UITableView! {
         didSet {
@@ -44,7 +48,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return parsedData?.count ?? 0
+        return filtersPlaceData.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -57,20 +61,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             eventCell.selectionStyle = .none
             let dFormat = DateFormatter()
             dFormat.dateFormat = "H:mm"
-            let time = Date(timeIntervalSince1970: TimeInterval((parsedData?[indexPath.row].startDate)!))
+            let time = Date(timeIntervalSince1970: TimeInterval((filtersPlaceData[indexPath.row].startDate)!))
             eventCell.timeLabel.text = dFormat.string(from: time)
-            eventCell.nameLabel.text = parsedData?[indexPath.row].name
+            eventCell.nameLabel.text = filtersPlaceData[indexPath.row].name
             eventCell.nameAndPhoneLabel.text =
-                (parsedData?[indexPath.row].authorName)! + ", " + (parsedData?[indexPath.row].authorPhone)!
+                (filtersPlaceData[indexPath.row].authorName)! + ", " + (filtersPlaceData[indexPath.row].authorPhone)!
             var statusPic = ""
             var statusColor : UIColor = .white
-            if parsedData?[indexPath.row].status == 0 {
+            if filtersPlaceData[indexPath.row].status == 0 {
                 statusPic = "questionmark.square"
                 statusColor = .yellow
-            } else if parsedData?[indexPath.row].status == 1 {
+            } else if filtersPlaceData[indexPath.row].status == 1 {
                 statusPic = "checkmark.square"
                 statusColor = .green
-            } else if parsedData?[indexPath.row].status == 2 {
+            } else if filtersPlaceData[indexPath.row].status == 2 {
                 statusPic = "xmark.square"
                 statusColor = .red
             }
@@ -84,7 +88,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let eventVC = EventViewController()
-        eventVC.event = parsedData?[indexPath.row]
+        eventVC.event = filtersPlaceData[indexPath.row]
         self.navigationController?.pushViewController(eventVC, animated: true)
     }
     
@@ -98,6 +102,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         do {
                             self.parsedData = try JSONDecoder().decode([Event].self, from: data)
                             DispatchQueue.main.async {
+                                self.filtersPlaceData = self.parsedData ?? []
                                 self.eventTable.reloadData()
                             }
                         }
@@ -111,5 +116,44 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     print(error.localizedDescription)
                 }
         }
+    }
+    
+    func filtrationByDate() {
+        for i in 0...((parsedData?.count)! - 1) {
+            let eventDate = Date(timeIntervalSince1970: TimeInterval((parsedData?[i].startDate)!))
+            let dFiltersDate = Calendar.current.component(.day, from: filtersDate!)
+            let mFiltersDate = Calendar.current.component(.month, from: filtersDate!)
+            let yFiltersDate = Calendar.current.component(.year, from: filtersDate!)
+            let dEventDate = Calendar.current.component(.day, from: eventDate)
+            let mEventDate = Calendar.current.component(.month, from: eventDate)
+            let yEventDate = Calendar.current.component(.year, from: eventDate)
+            if dFiltersDate == dEventDate && mFiltersDate == mEventDate && yFiltersDate == yEventDate {
+                filtersDateData.append((parsedData?[i])!)
+            }
+        }
+    }
+    
+    func filtrationByPlace() {
+        for i in 0...(filtersDateData.count - 1) {
+            if "\(filtersPlace!)" == filtersDateData[i].room {
+                filtersPlaceData.append(filtersDateData[i])
+            }
+        }
+    }
+    
+    func reloadWithFilters() {
+        if filtersDate != nil {
+            filtersDateData = []
+            filtrationByDate()
+        } else {
+            filtersDateData = parsedData!
+        }
+        if filtersPlace != nil && filtersDateData.count > 0 {
+            filtersPlaceData = []
+            filtrationByPlace()
+        } else {
+            filtersPlaceData = filtersDateData
+        }
+        eventTable.reloadData()
     }
 }

@@ -11,6 +11,8 @@ import UIKit
 class FiltersVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var selectedPlaces = [false, false, false]
+    var filtersDate : Date?
+    var filtersPlace : Int?
     
     @IBOutlet weak var filtersTableView: UITableView! {
         didSet {
@@ -22,6 +24,9 @@ class FiltersVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Фильтры"
+        let readyButton = UIBarButtonItem(title: "Готово", style: .plain, target: self,
+                                          action: #selector(readyClick))
+        self.navigationItem.rightBarButtonItem  = readyButton
         filtersTableView.register(UINib(nibName: "DateCell", bundle: nil),
                                forCellReuseIdentifier: "DateCell")
         filtersTableView.register(UINib(nibName: "PlaceCell", bundle: nil),
@@ -112,6 +117,26 @@ class FiltersVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 placeCell.checkButton()
                 selectedPlaces[indexPath.row] = true
             }
+        }
+    }
+    
+    @objc func readyClick() {
+        if selectedPlaces.firstIndex(of: true) != nil {
+            filtersPlace = selectedPlaces.firstIndex(of: true)! + 1
+        }
+        if let dateCell = filtersTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? DateCell {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat =  "d MMM yyyy"
+            filtersDate = dateFormatter.date(from: dateCell.dateInput.text!)
+        }
+        navigationController?.popViewController(animated: true)
+        let countView = navigationController?.viewControllers.count
+        if let prevVC = navigationController?.viewControllers[countView! - 1] as? ViewController {
+            prevVC.filtersDate = filtersDate
+            prevVC.filtersPlace = filtersPlace
+//            prevVC.send
+            prevVC.reloadWithFilters()
+//            prevVC.eventTable.reloadData()
         }
     }
 }

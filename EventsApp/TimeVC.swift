@@ -50,6 +50,7 @@ class TimeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
                 timeCollectionCell.backgroundColor = .lightGray
             } else {
                 timeCollectionCell.active = true
+                timeCollectionCell.backgroundColor = .white
             }
             timeCollectionCell.timeLabel.text =
             "\(cellTime / 60 < 24 ? cellTime / 60 : 0):\(cellTime % 60 == 0 ? 0 : 3)0"
@@ -144,7 +145,7 @@ class TimeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
                 + Calendar.current.component(.hour, from: startTime) * 60
             let mEndTime = Calendar.current.component(.minute, from: endTime)
                 + Calendar.current.component(.hour, from: endTime) * 60
-            for j in stride(from: mStartTime, through: mEndTime, by: 30) {
+            for j in stride(from: mStartTime, to: mEndTime, by: 30) {
                 busyTime.append(j)
             }
         }

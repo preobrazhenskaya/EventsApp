@@ -27,12 +27,26 @@
                         <rect key="frame" x="40" y="20" width="272" height="22"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <textInputTraits key="textInputTraits"/>
+                        <connections>
+                            <action selector="click:" destination="KGk-i7-Jjw" eventType="editingDidBegin" id="wZl-h4-R28"/>
+                            <action selector="clickInside:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="ouH-ny-rU7"/>
+                        </connections>
                     </textField>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XFo-bc-was">
+                        <rect key="frame" x="16" y="63" width="288" height="2"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="hhy-qf-7Kp"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="LRH-fm-34I" secondAttribute="trailing" constant="8" id="Bxf-ws-rDf"/>
                     <constraint firstItem="LRH-fm-34I" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="EBt-WE-lPd"/>
+                    <constraint firstAttribute="bottom" secondItem="XFo-bc-was" secondAttribute="bottom" id="GWx-aT-aVW"/>
+                    <constraint firstItem="XFo-bc-was" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="TDg-7W-pl9"/>
                     <constraint firstAttribute="bottom" secondItem="LRH-fm-34I" secondAttribute="bottom" constant="23" id="WMJ-3T-qUv"/>
+                    <constraint firstAttribute="trailing" secondItem="XFo-bc-was" secondAttribute="trailing" constant="16" id="Zgj-X4-1bx"/>
                     <constraint firstItem="CwE-l5-Lhg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="ikI-lK-Boa"/>
                     <constraint firstItem="LRH-fm-34I" firstAttribute="leading" secondItem="CwE-l5-Lhg" secondAttribute="trailing" constant="10.710000000000001" id="jxk-qN-O7F"/>
                     <constraint firstItem="CwE-l5-Lhg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="lVI-yi-fvv"/>
@@ -42,6 +56,7 @@
             <connections>
                 <outlet property="informationIcon" destination="CwE-l5-Lhg" id="7uT-7u-Rfc"/>
                 <outlet property="informationInput" destination="LRH-fm-34I" id="dr7-dE-mUf"/>
+                <outlet property="underlineView" destination="XFo-bc-was" id="PIY-kb-vgG"/>
             </connections>
             <point key="canvasLocation" x="139" y="103"/>
         </tableViewCell>
