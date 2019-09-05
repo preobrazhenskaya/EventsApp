@@ -101,7 +101,7 @@ class EventViewController: UIViewController {
                                 self.event = try JSONDecoder().decode(Event.self, from: data)
                             }
                             catch {
-                                print("Can't fetch parsedData")
+                                print("Can't fetch event")
                             }
                         } else {
                             return
